@@ -116,7 +116,7 @@ h2{
     overflow-x:auto;   /* first scroll */
     overflow-y:hidden;
 
-    text-align:center;
+    text-align:left;
 }
 
 /* INNER WRAPPER */
