@@ -1,0 +1,233 @@
+/* =========================
+RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+BODY
+========================= */
+body{
+    background:#f8fafc;
+    color:#0f172a;
+    font-family:'Inter', sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+HEADER
+========================= */
+header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+    background:#ffffff;
+    border-bottom:1px solid #e2e8f0;
+}
+
+header h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+.flow{ color:#f59e0b; }
+.two{ color:#a855f7; }
+.code{ color:#22c55e; }
+
+header p{
+    font-size:14px;
+    color:#64748b;
+}
+
+/* =========================
+MAIN FLEX LAYOUT
+========================= */
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 15px;
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* =========================
+SECTION CARD
+========================= */
+section{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    border:1px solid #e2e8f0;
+    transition:0.3s;
+}
+
+section:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* prevent child overflow */
+section *{
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+/* =========================
+TITLE
+========================= */
+h2{
+    font-size:18px;
+    font-weight:600;
+    color:#0ea5e9;
+}
+
+/* =========================
+🔥 DOUBLE SCROLL TRACER
+========================= */
+
+/* OUTER BOX */
+.codecheck_tracer{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+
+    background:#f1f5f9;
+    border-radius:10px;
+    border:1px solid #e2e8f0;
+
+    padding:10px;
+
+    overflow-x:auto;   /* first scroll */
+    overflow-y:hidden;
+
+    text-align:center;
+}
+
+/* INNER WRAPPER */
+.codecheck_tracer > div{
+    width:max-content;
+    min-width:700px;  /* 🔥 discipline width */
+
+    overflow-x:auto;  /* second scroll */
+}
+
+/* =========================
+TRACE ELEMENT FIX
+========================= */
+.codecheck_tracer canvas,
+.codecheck_tracer svg{
+    display:block;
+    max-width:none !important;
+}
+
+/* =========================
+CODE BLOCK FIX
+========================= */
+.codecheck_tracer pre{
+    min-width:600px;
+    white-space:pre;
+    font-size:14px;
+    color:#0f172a;
+}
+
+/* =========================
+🔥 START BUTTON FIX
+========================= */
+.codecheck_tracer button{
+    max-width:100%;
+    width:auto;
+
+    display:inline-block;
+    margin:10px auto;
+
+    white-space:normal;
+    word-break:break-word;
+
+    padding:8px 14px;
+    border-radius:8px;
+
+    background:#0ea5e9;
+    color:#fff;
+    border:none;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.codecheck_tracer button:hover{
+    background:#0284c7;
+}
+
+/* =========================
+FOOTER
+========================= */
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:13px;
+    color:#64748b;
+    border-top:1px solid #e2e8f0;
+    background:#ffffff;
+}
+
+/* =========================
+SCROLLBAR (DUAL)
+========================= */
+.codecheck_tracer::-webkit-scrollbar,
+.codecheck_tracer > div::-webkit-scrollbar{
+    height:6px;
+}
+
+.codecheck_tracer::-webkit-scrollbar-thumb,
+.codecheck_tracer > div::-webkit-scrollbar-thumb{
+    background:#94a3b8;
+    border-radius:10px;
+}
+
+/* =========================
+MOBILE FIX
+========================= */
+@media(max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    main{
+        padding:20px 10px;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+
+    section{
+        padding:15px;
+    }
+
+    .codecheck_tracer{
+        max-width:100%;
+        padding:8px;
+    }
+
+    .codecheck_tracer > div{
+        min-width:600px; /* tighter mobile */
+    }
+
+}
